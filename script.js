@@ -7,11 +7,11 @@ async function checkWeather(city){
 	const Response= await fetch(apiUrl+ city +`&appid=${apiKey}`);
 	var data=await Response.json();
 	console.log(data);
-        hide.style.display='block';
 	document.querySelector(".city").innerHTML=data.name;
 	document.querySelector(".temp").innerHTML=Math.round(data.main.temp)+ "°C";
 	document.querySelector(".humidity").innerHTML=data.main.humidity+"%";
 	document.querySelector(".wind").innerHTML=data.wind.speed+" km/hr";
+	 hide.style.display='block';
 }
 
 searchbtn.addEventListener("click",()=>{
